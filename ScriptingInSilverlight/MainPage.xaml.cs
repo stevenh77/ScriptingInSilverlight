@@ -12,13 +12,12 @@ namespace ScriptingInSilverlight
 
             // call web service to get Python script, for this demo we are hard coding the script here
 
-            Python.Text = "from datetime import datetime, timedelta" + Environment.NewLine +
-                          "def calculateCommission(startdate, enddate):" + Environment.NewLine +
-                          "  if (enddate < startdate.AddMonths(3)):" + Environment.NewLine +
+            Python.Text = "def calculateCommission(start, end):" + Environment.NewLine +
+                          "  if (end < start.AddMonths(3)):" + Environment.NewLine +
                           "    return 1" + Environment.NewLine +
-                          "  elif (enddate >= startdate.AddMonths(3) and enddate < startdate.AddMonths(6)):" + Environment.NewLine +
+                          "  elif (end >= start.AddMonths(3) and end < start.AddMonths(6)):" + Environment.NewLine +
                           "    return 2" + Environment.NewLine +
-                          "  elif (enddate >= startdate.AddMonths(6) and enddate <= startdate.AddMonths(12)):" + Environment.NewLine +
+                          "  elif (end >= start.AddMonths(6) and end <= start.AddMonths(12)):" + Environment.NewLine +
                           "    return 3";
 
         }
